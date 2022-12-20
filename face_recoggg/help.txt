@@ -1,0 +1,26 @@
+python dataset.py --cascade D:\Python\Lib\site-packages\cv2\data\haarcascade_frontalface_default.xml --output D:\face_recoggg\dataset\guhen
+python enc.py --dataset D:\face_recoggg\dataset --encodings D:\face_recoggg\encoding\encoding.pickle 
+python re_vid.py --encodings D:\face_recoggg\encoding\encoding.pickle --output D:\face_recoggg\out_vid.avi 
+
+
+
+OPENCV
+
+python embed.py --dataset D:\face_recoggg\dataset --embeddings D:\face_recoggg\opencvq\embed\embedd.pickle --detector D:\face_recoggg\opencvq\detector --embedding-model D:\face_recoggg\opencvq\detector\openface.nn4.small2.v1.t7
+python train.py --embeddings D:\face_recoggg\opencvq\embed\embedd.pickle --recognizer D:\face_recoggg\opencvq\recognizer\reco.pickle --le D:\face_recoggg\opencvq\recognizer\le.pickle 
+python vid_reg.py --detector D:\face_recoggg\opencvq\detector --embedding-model D:\face_recoggg\opencvq\detector\openface.nn4.small2.v1.t7 --recognizer D:\face_recoggg\opencvq\recognizer\reco.pickle --le D:\face_recoggg\opencvq\recognizer\le.pickle
+
+
+video files
+
+python video_recog.py --encodings D:\face_recoggg\encoding\encoding.pickle --input D:\face_recoggg\the_avengers_test.mp4 --output D:\face_recoggg\out_vid.avi
+
+
+aisangam
+
+D:\New folder\Facenet-Real-time-face-recognition-using-deep-learning-Tensorflow-master\Facenet-Real-time-face-recognition-using-deep-learning-Tensorflow-master>
+
+face_id-master
+python align_dataset_mtcnn.py D:\Face_ID-master\facenet\dataset\raw D:\Face_ID-master\facenet\dataset\aligned 
+
+classifier.py TRAIN D:\Face_ID-master\facenet\dataset\aligned D:\Face_ID-master\facenet\src\20180402-114759\ D:\Face_ID-master\facenet\src\20180402-114759\my_classifier.pkl --batch_size 1000 --min_nrof_images_per_class 10 --nrof_train_image_per_class 10 --use_split_dataset

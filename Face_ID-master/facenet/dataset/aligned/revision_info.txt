@@ -1,0 +1,7 @@
+arguments: align_dataset_mtcnn.py D:\Face_ID-master\facenet\dataset\raw D:\Face_ID-master\facenet\dataset\aligned --image_size 160 --margin 32 --random_order --gpu_memory_fraction 0.25
+--------------------
+tensorflow version: 1.13.1
+--------------------
+git hash: git rev-parse HEAD: The system cannot find the file specified
+--------------------
+git diff HEAD: The system cannot find the file specified
